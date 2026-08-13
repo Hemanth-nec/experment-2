@@ -1,0 +1,310 @@
+container widget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+     debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      body: Center(
+        child: Container(
+          width: 150,
+          height: 150,
+          color: Colors.red,
+          child: Center(
+            child: Text(
+              'Hello Container',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ));
+}
+
+-> image through url(image.network)
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 200,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.blue, width: 3),
+            borderRadius: BorderRadius.circular(15),
+            image: DecorationImage(
+              image: NetworkImage('https://picsum.photos/300/200'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      ),
+    ),
+  ));
+}
+
+widget code(appbar,container and text)
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Widgets Example',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('flutter lab'),
+          backgroundColor: Colors.red,
+        ),
+        body: Center(
+          child: Container(
+            padding: EdgeInsets.all(20),
+            color: Colors.amber,
+            child: Text(
+              'welcome to cse!',
+              style: TextStyle(fontSize: 40, color: Colors.black),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+image through Assests:-
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Image.asset Example')),
+        body: Center(
+          child: Image.asset('assert/img.jpg'),
+        ),
+      ),
+    );
+  }
+}
+
+process for this image assets
+ 
+project view->create directory(asserts) cut jpg image and convert into jpg while saving image and then copy to asserts directory which you created.
+ 
+that must be in jpg (ex:-name it as like image.jpg)
+
+
+->in pubspec.yaml 
+flutter
+
+  uses-material-design: true
+This is already exists under this add below
+
+
+Add these 2 lines 
+  assets:
+    - assert/img.jpg(img.jpg that should be given according to your filename.jpg)
+
+after adding create one dart file in lib follow the above code
+
+GO TO terminal->flutter pub get(all the packages will be downloaded)
+
+flutter run/run directly by selecting that particular file.
+
+
+
+Text Widget:-
+
+import 'package:flutter/material.dart';
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(title: Text("Text Widget"))
+          body: Center(
+            child: Text(
+              'welcome to cse!',
+              style: TextStyle(fontSize: 40, color: Colors.red),
+            ),
+          ),
+  ),
+  ));
+}
+
+
+Row widget:-
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,  // Center widgets horizontally
+          children: [
+            Icon(Icons.star, color: Colors.blue, size: 30),
+            SizedBox(width: 25), // spacing between icons
+            Icon(Icons.thumb_up,color: Colors.red,size: 30),
+            SizedBox(width: 25),
+            Text(
+              "Flutter",
+              style: TextStyle(fontSize:30,color:Colors.red),
+              )
+
+
+          ],
+        ),
+      ),
+    ),
+  ));
+}
+
+
+
+
+Column widget:-
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,  
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.star, color: Colors.orange, size: 40),
+            SizedBox(height: 20),  
+            Icon(Icons.favorite, color: Colors.red, size: 40),
+            SizedBox(height: 20),
+            Icon(Icons.thumb_up, color: Colors.blue, size: 40),
+          ],
+        ),
+      ),
+    ),
+  ));
+}
+
+
+Stack:-
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.red.withOpacity(0.7),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green.withOpacity(0.7),
+            ),
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: Text(
+                'Stacked Text',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            )
+          ],
+        ),
+      ),
+    ),
+  ));
+}
+
+
+
+Container:-
+
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          color: Colors.blue,
+          child: Center(
+            child: Text(
+              'Hello Container',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ));
+}
+
+
+grid view:-
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: Text('GridView Example')),
+      body: GridView.count(
+        crossAxisCount: 3, 
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        padding: EdgeInsets.all(10),
+        children: List.generate(12, (index) {
+          return Container(
+            color: Colors.blue[(index % 9 + 1) * 100],
+            child: Center(
+              child: Text(
+                'Item $index',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            ),
+          );
+        }),
+      ),
+    ),
+  ));
+}
